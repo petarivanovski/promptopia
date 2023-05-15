@@ -31,7 +31,6 @@ const Feed = () => {
       const data = await response.json();
 
       setPrompts(data);
-      console.log("setting prompts", data);
     };
 
     fetchPrompts();
