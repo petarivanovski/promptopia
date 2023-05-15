@@ -8,7 +8,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 const Nav = () => {
   const { data: session } = useSession();
 
-  const [providers, setProviders] = useState([]);
+  const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
   useEffect(() => {
@@ -16,6 +16,7 @@ const Nav = () => {
       const response = await getProviders();
 
       setProviders(response);
+      console.log("setting providers", response);
     };
 
     setUpProviders();
